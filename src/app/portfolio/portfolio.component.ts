@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -6,9 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css']
 })
-
 export class PortfolioComponent implements OnInit {
-
   // hard coded Pillar list
   public pillarArray = [
     {
@@ -20,39 +19,26 @@ export class PortfolioComponent implements OnInit {
     {
       id: 3, name: 'Cross-Pillar Platform'
     },
+    {
+      id: 4, name: 'IT Operations'
+    }
   ];
   constructor(private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
-    this.route.paramMap
-    .subscribe(params => {
-     const id = params.get('id');
-     console.log('in Portfolio component id =' + id);
-      // Ideally we should write a service to get a response for the given id
-    }); }
-    public nextPage() {
-      this.router.navigateByUrl('portfolio/dashboard', { skipLocationChange: true });
-    }
-    public previousPage() {
-     this.router.navigateByUrl('', { skipLocationChange: true });
-    }
-    public showHomePage() {
-     this.router.navigateByUrl('', { skipLocationChange: true });
-    }
-
-
-
-  ngAfterViewInit() {
-    //Ideally we should write a service to get a response for the given id
     this.updateToolbarAppTitle();
   }
+  
 
   updateToolbarAppTitle() {
     this.route.paramMap
       .subscribe(params => {
         let id = params.get('id');
         let elem: HTMLElement = document.getElementById('appTitle');
-        elem.innerHTML = elem.innerHTML + ' | ' + id;
+        elem.innerHTML = AppComponent.title + ' | ' + id;
       });
   }
 
+  public showDashboard(event: Event) {
+    this.router.navigateByUrl('/portfolio/dashboard', { skipLocationChange: true });
+  }
 }
