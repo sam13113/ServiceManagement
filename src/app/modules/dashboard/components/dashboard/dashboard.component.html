@@ -75,8 +75,8 @@
         </div>
       </div> -->
       <!--tile/.row-->
-      <div>
-        <router-outlet></router-outlet>
+      <div class="routeContainer" [@routerTransition]="prepareDashBoardRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
         <!-- <app-dashboard-content></app-dashboard-content> -->
       </div>
       <!-- content of dashboard -->

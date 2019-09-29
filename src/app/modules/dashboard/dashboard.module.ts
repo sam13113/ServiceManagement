@@ -5,6 +5,8 @@ import { DashboardButtongrpComponent } from './components/dashboard-buttongrp/da
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardProjectModule } from './modules/dashboard-project/dashboard-project.module';
 import { ServiceRecordModule } from './modules/service-record/service-record.module';
+import { ContractsModule } from './modules/contracts/contracts.module';
+import { ChartsModule } from 'ng2-charts';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
@@ -18,6 +20,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
         CommonModule,
         DashboardProjectModule,
         ServiceRecordModule,
+        ContractsModule,
+        ChartsModule,
         DashboardRoutingModule
     ],
     providers: [],

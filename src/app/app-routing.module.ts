@@ -4,11 +4,11 @@ import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent ,data: {animation: 'HomePage'} },
    { path: 'portfolio/dashboard', loadChildren: () => {
     return import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule);
   } },
-{ path: 'portfolio/:id', component: PortfolioComponent },
+{ path: 'portfolio/:id', component: PortfolioComponent, data: {animation: 'PortfolioPage'} },
 { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardButtongrpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+  showContractsPage(){
+    this.router.navigateByUrl('portfolio/dashboard/contracts', { skipLocationChange: true });
 
+}
 }

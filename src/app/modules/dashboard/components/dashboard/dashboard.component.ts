@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data.service';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import {  routerTransition } from '../../../../animations/app-animations';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  animations: [ routerTransition()]
 })
 export class DashboardComponent implements OnInit {
   project$: object;
@@ -18,5 +20,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.data.getProject().subscribe(data => this.project$ = data)
   }
-
+  prepareDashBoardRoute(outlet: RouterOutlet) {
+    //outlet && outlet.activatedRouteData &&
+    return  outlet.activatedRouteData['animation'];
+  }
 }

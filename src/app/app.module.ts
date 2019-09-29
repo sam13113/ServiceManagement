@@ -5,7 +5,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import {  SharedModule } from './common/shared.module';
-import { ChartsModule } from 'ng2-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { ChartsModule } from 'ng2-charts';
     HttpClientModule,
     FormsModule,
     SharedModule,
-    ChartsModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
