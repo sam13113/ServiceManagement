@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DatasourcingComponent } from './datasourcing/datasourcing.component';
+import { HomeComponent } from './components/home/home.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'portfolio/dashboard/datasourcing', component: DatasourcingComponent },
-  { path: 'portfolio/dashboard', component: DashboardComponent },
-  { path: 'portfolio/:id', component: PortfolioComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+   { path: 'portfolio/dashboard', loadChildren: () => {
+    return import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule);
+  } },
+{ path: 'portfolio/:id', component: PortfolioComponent },
+{ path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -20,5 +19,5 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents = [
   HomeComponent,
-  PortfolioComponent,
-  DatasourcingComponent];
+  PortfolioComponent
+  ];

@@ -1,0 +1,47 @@
+<div class="row">
+  <!--tile .row-->
+  <div class="col-sm-6 col-lg-3">
+    <div class="card text-white bg-success">
+      <div class="row">
+        <div class="card-body pb-0">
+          <div class="text-value">{{ project$?.activeSLA }}</div>
+          <div class="card-">Active SLAs</div>
+        </div>
+        <div class="card-body">
+          <i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+  <div class="col-sm-6 col-lg-3">
+    <div class="card text-white bg-warning">
+      <div class="row">
+        <div class="card-body pb-0">
+          <div class="text-value">{{ project$?.atRiskSLA }}</div>
+          <div>At Risk SLAs</div>
+        </div>
+        <div class="card-body">
+          <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+  <div class="col-sm-6 col-lg-3">
+    <div class="card text-white bg-danger">
+      <div class="row">
+        <div class="card-body pb-0">
+          <div class="text-value">{{ project$?.activeSLA }}</div>
+          <div>Breached SLAs</div>
+        </div>
+
+        <div class="card-body">
+          <i class="fa  fa-medkit fa-5x" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
+
+</div>
