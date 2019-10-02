@@ -2,3 +2,13 @@
   color:#004a94;
   font-size: 1em;
 }
+
+#appTitleText{
+  border: none;
+border-width: 0;
+box-shadow: none;
+background: none;
+overflow: visible;
+width: 500px;
+align-self: right;
+}

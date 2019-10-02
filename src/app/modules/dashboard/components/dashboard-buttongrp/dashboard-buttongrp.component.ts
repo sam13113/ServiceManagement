@@ -13,7 +13,7 @@ export class DashboardButtongrpComponent implements OnInit {
 
   ngOnInit() {
   }
-  showContractsPage(){
+  showContractsPage() {
     this.router.navigateByUrl('portfolio/dashboard/contracts', { skipLocationChange: true });
 
 }

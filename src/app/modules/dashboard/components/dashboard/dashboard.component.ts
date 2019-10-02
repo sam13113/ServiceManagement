@@ -18,10 +18,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigateByUrl('', { skipLocationChange: true });
   }
   ngOnInit() {
-    this.data.getProject().subscribe(data => this.project$ = data)
+    this.data.getProject().subscribe(data => this.project$ = data);
   }
   prepareDashBoardRoute(outlet: RouterOutlet) {
-    //outlet && outlet.activatedRouteData &&
-    return  outlet.activatedRouteData['animation'];
+    // outlet && outlet.activatedRouteData &&
+    return  outlet.activatedRouteData.animation;
   }
 }

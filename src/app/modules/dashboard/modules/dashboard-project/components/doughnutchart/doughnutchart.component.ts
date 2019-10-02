@@ -8,10 +8,10 @@ import { ChartType } from 'chart.js';
 })
 export class DoughnutchartComponent  {
   // Doughnut
-  public doughnutChartLabels: string[] = ['Kraft', 'Leben', 'CFS','PMS'];
-  public doughnutChartData: number[] = [350, 450, 100,255];
+  public doughnutChartLabels: string[] = ['Kraft', 'Leben', 'CFS', 'PMS'];
+  public doughnutChartData: number[] = [350, 450, 100, 255];
   public doughnutChartType: ChartType = 'doughnut';
-  private donutColors=[
+  private donutColors = [
     {
       backgroundColor: [
         '#ff6e54',

@@ -34,7 +34,7 @@ export class LinechartComponent  {
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(77,83,96,1)'
     },
-    { // cfs 
+    { // cfs
       backgroundColor: 'rgba(221, 81, 130, 0.1)',
       borderColor: '#dd5182',
       pointBackgroundColor: '#dd5182',

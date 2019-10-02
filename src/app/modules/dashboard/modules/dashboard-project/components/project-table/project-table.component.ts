@@ -13,7 +13,7 @@ export class ProjectTableComponent implements OnInit {
   constructor(private data: DataService, private router: Router) { }
 
   ngOnInit() {
-    this.data.getSubProjects().subscribe(data => this.subProjects$ = data)
+    this.data.getSubProjects().subscribe(data => this.subProjects$ = data);
   }
 
   public showDatasourcing(event: Event) {

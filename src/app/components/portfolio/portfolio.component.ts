@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../../app.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeaderStringService } from 'src/app/services/header-string.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -23,20 +23,12 @@ export class PortfolioComponent implements OnInit {
       id: 4, name: 'IT Operations'
     }
   ];
-  constructor(private route: ActivatedRoute, private router: Router) { }
-  ngOnInit() {
-    this.updateToolbarAppTitle();
-  }
+  constructor(private route: ActivatedRoute, private router: Router, private header: HeaderStringService) {
+// this.header.changeHeader('Service Level Management | Portfolio Management | DE');
+   }
+  ngOnInit() {}
 
 
-  updateToolbarAppTitle() {
-    this.route.paramMap
-      .subscribe(params => {
-        let id = params.get('id');
-        let elem: HTMLElement = document.getElementById('appTitle');
-        elem.innerHTML = AppComponent.title + ' | ' + id;
-      });
-  }
 
   public showDashboard(event: Event) {
     this.router.navigateByUrl('/portfolio/dashboard', { skipLocationChange: true });

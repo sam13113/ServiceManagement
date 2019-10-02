@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import {  SharedModule } from './common/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderStringService } from './services/header-string.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [HeaderStringService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
