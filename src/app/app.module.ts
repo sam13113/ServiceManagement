@@ -4,15 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import {  SharedModule } from './common/shared.module';
+import { SharedModule } from './common/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderStringService } from './services/header-string.service';
+import { Globals } from './common/constants/Globals';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    routingComponents,
-  ],
+  declarations: [AppComponent, routingComponents],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,7 +19,7 @@ import { HeaderStringService } from './services/header-string.service';
     SharedModule,
     BrowserAnimationsModule
   ],
-  providers: [HeaderStringService],
+  providers: [HeaderStringService, Globals],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

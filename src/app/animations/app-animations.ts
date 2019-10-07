@@ -78,7 +78,7 @@ export let  routerTransition =
 
     transition('ContractsPage => DatasourcingPage', reverseAnimation),
     transition('DatasourcingPage => ContractsPage', forwardAnimation),
-//clicking home from anywhere
+// clicking home from anywhere
     transition('DashboardPage => HomePage', reverseAnimation),
     transition('PortfolioPage => HomePage', reverseAnimation),
     transition('DatasourcingPage => HomePage', reverseAnimation),

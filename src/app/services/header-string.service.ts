@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of,BehaviorSubject  } from 'rxjs';
+import {  BehaviorSubject  } from 'rxjs';
 
 @Injectable()
 export class HeaderStringService {
@@ -10,7 +10,7 @@ public messageSource;
     this.messageSource = this.headerMessage.asObservable();
   }
 
-  public changeMessage(message:string):void{
+  public changeMessage(message: string): void {
     this.headerMessage.next(message);
   }
 

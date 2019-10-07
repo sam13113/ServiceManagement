@@ -15,7 +15,7 @@ const routes: Routes = [
         component: ContractUploadComponent, data: {animation: 'ContractsPage'}
       },
       {
-        path: 'datasourcing',
+        path: 'service',
         component: DatasourcingComponent, data: {animation: 'DatasourcingPage'}
       },
       {

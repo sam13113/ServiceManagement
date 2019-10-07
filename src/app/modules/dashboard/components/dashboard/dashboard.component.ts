@@ -12,11 +12,11 @@ import {  routerTransition } from '../../../../animations/app-animations';
 export class DashboardComponent implements OnInit {
 
 
-  constructor( private router: Router) { }
+  // constructor( private router: Router) { }
 
-    public showHomePage() {
-    this.router.navigateByUrl('', { skipLocationChange: true });
-  }
+  //   public showHomePage() {
+  //   this.router.navigateByUrl('', { skipLocationChange: true });
+  // }
   ngOnInit() {
 
   }
