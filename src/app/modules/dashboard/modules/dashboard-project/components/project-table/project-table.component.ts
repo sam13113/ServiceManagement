@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../../../services/data.service';
 import { Router } from '@angular/router';
+import { ISubProject } from 'src/app/services/models/ISubProject';
 
 @Component({
   selector: 'app-project-table',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./project-table.component.css']
 })
 export class ProjectTableComponent implements OnInit {
-  subProjects$: object;
+  subProjects$: ISubProject;
 
   constructor(private data: DataService, private router: Router) { }
 

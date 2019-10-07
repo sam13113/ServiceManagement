@@ -22,7 +22,7 @@ import {  routerTransition } from './animations/app-animations';
         position:relative;
             }
     `
-  ], animations: [ routerTransition()]
+  ], animations: [ routerTransition]
 })
 export class AppComponent {
   public static title = 'Service Level Management | Portfolio Management';

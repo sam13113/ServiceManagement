@@ -11,7 +11,7 @@ export class DoughnutchartComponent  {
   public doughnutChartLabels: string[] = ['Kraft', 'Leben', 'CFS', 'PMS'];
   public doughnutChartData: number[] = [350, 450, 100, 255];
   public doughnutChartType: ChartType = 'doughnut';
-  private donutColors = [
+  public donutColors = [
     {
       backgroundColor: [
         '#ff6e54',

@@ -55,8 +55,8 @@ const reverseAnimation = [
   query(':enter', animateChild()),
 ];
 
-export function routerTransition() {
-  return trigger('routerTransition',
+export let  routerTransition =
+   trigger('routerTransition',
    [
 
     transition('HomePage => PortfolioPage', forwardAnimation),
@@ -84,8 +84,8 @@ export function routerTransition() {
     transition('DatasourcingPage => HomePage', reverseAnimation),
     transition('ContractsPage => HomePage', reverseAnimation)
   ]
-  );
-}
+  )
+;
 
 
 

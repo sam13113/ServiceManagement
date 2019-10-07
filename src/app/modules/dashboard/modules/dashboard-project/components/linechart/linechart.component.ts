@@ -57,5 +57,13 @@ export class LinechartComponent  {
 
   ngOnInit() {
   }
+
+  public chartHovered(event:Event){
+
+  }
+
+  public chartClicked(event:Event){
+
+  }
 }
 
