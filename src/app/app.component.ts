@@ -5,6 +5,7 @@ import {  routerTransition } from './animations/app-animations';
 @Component({
   selector: 'app-root',
   template: `
+  <app-load-screen></app-load-screen>
     <app-header></app-header>
    <div id="app-content" class="routeContainer" [@routerTransition]="prepareRoute(outlet)" >
   <router-outlet #outlet="outlet">

@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from './common/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderStringService } from './services/header-string.service';
 import { Globals } from './common/constants/Globals';
+import { LoadScreenComponent } from './components/load-screen/load-screen.component';
+import { LoadingScreenInterceptor } from './helpers/loaders/loadingscreeninterceptor';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents],
+  declarations: [AppComponent, routingComponents, LoadScreenComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +21,11 @@ import { Globals } from './common/constants/Globals';
     SharedModule,
     BrowserAnimationsModule
   ],
-  providers: [HeaderStringService, Globals],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoadingScreenInterceptor,
+    multi: true
+  },HeaderStringService, Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
