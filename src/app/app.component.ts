@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router, RouterEvent } from '@angular/router';
 import {  routerTransition } from './animations/app-animations';
+import { LoadingScreenService } from './services/loading-screen.service';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,11 @@ import {  routerTransition } from './animations/app-animations';
 })
 export class AppComponent {
   public static title = 'Service Level Management | Portfolio Management';
+  constructor(private router: Router, private loadingScreenService:LoadingScreenService) {
+    router.events.subscribe((event: RouterEvent) => {
+      this.loadingScreenService.routernavigationEvent(event)
+    })
+  }
   prepareRoute(outlet: RouterOutlet) {
     // outlet && outlet.activatedRouteData &&
     return  outlet.activatedRouteData.animation;
