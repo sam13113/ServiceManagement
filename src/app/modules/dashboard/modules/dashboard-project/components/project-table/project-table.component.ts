@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../../../services/data.service';
 import { Router } from '@angular/router';
 import { ISubProject } from 'src/app/services/models/ISubProject';
-import { Globals } from 'src/app/common/constants/Globals';
 import {  RoutingEnumConstants } from 'src/app/common/constants/app-constants';
+import { FacadeService } from 'src/app/services/facade.service';
 
 @Component({
   selector: 'app-project-table',
@@ -13,15 +13,15 @@ import {  RoutingEnumConstants } from 'src/app/common/constants/app-constants';
 export class ProjectTableComponent implements OnInit {
   subProjects$: ISubProject;
 
-  constructor(private data: DataService, private router: Router, private globals: Globals) { }
+  constructor(private data: DataService, private router: Router, private facade: FacadeService) { }
 
   ngOnInit() {
     this.data.getSubProjects().subscribe(data => this.subProjects$ = data);
   }
 
   public showDatasourcing(event: Event) {
-    this.globals.setRoutingConstant(RoutingEnumConstants.SERVICE);
-    this.router.navigateByUrl(this.globals.getRoutingObject().url, { skipLocationChange: true });
+    this.facade.setRoutingConstant(RoutingEnumConstants.SERVICE);
+    this.router.navigateByUrl(this.facade.getRoutingObject().url, { skipLocationChange: true });
   }
 
 }

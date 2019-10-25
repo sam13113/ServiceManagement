@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HeaderStringService } from 'src/app/services/header-string.service';
-import { Globals } from 'src/app/common/constants/Globals';
 import {  RoutingEnumConstants } from 'src/app/common/constants/app-constants';
+import { FacadeService } from 'src/app/services/facade.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -25,7 +24,7 @@ export class PortfolioComponent implements OnInit {
       id: 4, name: 'IT Operations'
     }
   ];
-  constructor(private route: ActivatedRoute, private router: Router, private header: HeaderStringService, private globals: Globals) {
+  constructor(private route: ActivatedRoute, private router: Router, private facade: FacadeService) {
 
    }
   ngOnInit() {}
@@ -33,7 +32,7 @@ export class PortfolioComponent implements OnInit {
 
 
   public showDashboard(event: Event) {
-    this.globals.setRoutingConstant(RoutingEnumConstants.DASHBOARD);
-    this.router.navigateByUrl(this.globals.getRoutingObject().url, { skipLocationChange: true });
+    this.facade.setRoutingConstant(RoutingEnumConstants.DASHBOARD);
+    this.router.navigateByUrl(this.facade.getRoutingObject().url, { skipLocationChange: true });
   }
 }

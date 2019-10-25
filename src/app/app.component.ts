@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, Router, RouterEvent } from '@angular/router';
 import {  routerTransition } from './animations/app-animations';
-import { LoadingScreenService } from './services/loading-screen.service';
+import { FacadeService } from './services/facade.service';
 
 @Component({
   selector: 'app-root',
@@ -28,9 +28,9 @@ import { LoadingScreenService } from './services/loading-screen.service';
 })
 export class AppComponent {
   public static title = 'Service Level Management | Portfolio Management';
-  constructor(private router: Router, private loadingScreenService:LoadingScreenService) {
+  constructor(private router: Router, private facade:FacadeService) {
     router.events.subscribe((event: RouterEvent) => {
-      this.loadingScreenService.routernavigationEvent(event)
+      this.facade.loadingScreenService.routernavigationEvent(event)
     })
   }
   prepareRoute(outlet: RouterOutlet) {

@@ -10,23 +10,23 @@ export class LoadingScreenService {
   private _loading: boolean = false;
   loadingStatus: Subject<boolean> = new Subject();
 
-  get Loading():boolean {
+  public get Loading():boolean {
     return this._loading;
   }
 
-  set Loading(value) {
+  public set Loading(value) {
     this._loading = value;
     this.loadingStatus.next(value);
   }
 
-  startLoading() {
+ public startLoading() {
     this.Loading=true;
   }
 
-  stopLoading() {
+  public stopLoading() {
     this.Loading = false;
   }
-  routernavigationEvent(event: RouterEvent): void {
+  public routernavigationEvent(event: RouterEvent): void {
     if (event instanceof NavigationStart) {
       this.Loading = true
     }

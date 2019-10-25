@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderStringService } from 'src/app/services/header-string.service';
 import { Subscription } from 'rxjs';
-import { Globals } from '../constants/Globals';
 import { IRouteObject, RoutingEnumConstants } from '../constants/app-constants';
+import { FacadeService } from 'src/app/services/facade.service';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +14,7 @@ export class HeaderComponent implements OnInit {
   private subscription: Subscription;
   constructor(
     private router: Router,
-    private header: HeaderStringService,
-    private globals: Globals
+    private facade: FacadeService
   ) {
     this.updateHeader();
   }
@@ -29,21 +27,21 @@ export class HeaderComponent implements OnInit {
     this.subscription.unsubscribe();
   }
   public showHomePage() {
-    this.globals.setRoutingConstant(RoutingEnumConstants.HOME);
+    this.facade.setRoutingConstant(RoutingEnumConstants.HOME);
     this.checkHeaderStatus();
     this.router.navigateByUrl('', { skipLocationChange: true });
   }
   public goBack() {
     console.log(this.router.url);
-    const routeObject: IRouteObject = this.globals.getPreviousPage();
+    const routeObject: IRouteObject = this.facade.getPreviousPage();
     this.checkHeaderStatus();
     this.router.navigateByUrl(routeObject.url, { skipLocationChange: true });
     // this._location.back();
   }
   public checkHeaderStatus(): void {
-const routingConstant = this.globals.getRoutingConstant() as RoutingEnumConstants;
+const routingConstant = this.facade.getRoutingConstant() as RoutingEnumConstants;
 if (routingConstant === RoutingEnumConstants.HOME) {
-  this.header.changeMessage('Service Level Management | Portfolio Management');
+  this.facade.changeMessage('Service Level Management | Portfolio Management');
 }
   }
   public getVisibility(): string {
@@ -54,7 +52,7 @@ if (routingConstant === RoutingEnumConstants.HOME) {
   }
 
   private updateHeader(): void {
-    this.subscription = this.header.messageSource.subscribe(message => {
+    this.subscription = this.facade.messageSource.subscribe(message => {
       this.title = message;
     });
   }

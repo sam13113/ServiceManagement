@@ -7,7 +7,7 @@ import {
 } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
-import { LoadingScreenService } from "src/app/services/loading-screen.service";
+import { FacadeService } from 'src/app/services/facade.service';
 
 @Injectable()
 export class LoadingScreenInterceptor implements HttpInterceptor {
@@ -18,7 +18,7 @@ export class LoadingScreenInterceptor implements HttpInterceptor {
    */
   skippUrls = ["/authrefresh"];
 
-  constructor(private loadingScreenService: LoadingScreenService) {}
+  constructor(private facade: FacadeService) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -35,7 +35,7 @@ export class LoadingScreenInterceptor implements HttpInterceptor {
 
     if (displayLoadingScreen) {
       if (this.activeRequests === 0) {
-        this.loadingScreenService.startLoading();
+        this.facade.startLoadingScreen();
       }
       this.activeRequests++;
 
@@ -43,7 +43,7 @@ export class LoadingScreenInterceptor implements HttpInterceptor {
         finalize(() => {
           this.activeRequests--;
           if (this.activeRequests === 0) {
-            this.loadingScreenService.stopLoading();
+            this.facade.stopLoadingScreen();
           }
         })
       );

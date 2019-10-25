@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LoadingScreenService } from 'src/app/services/loading-screen.service';
+import { LoadingScreenService } from 'src/app/services/loadingscreen/loading-screen.service';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({

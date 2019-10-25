@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from './common/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderStringService } from './services/header-string.service';
-import { Globals } from './common/constants/Globals';
 import { LoadScreenComponent } from './components/load-screen/load-screen.component';
 import { LoadingScreenInterceptor } from './helpers/loaders/loadingscreeninterceptor';
 
@@ -25,7 +23,7 @@ import { LoadingScreenInterceptor } from './helpers/loaders/loadingscreeninterce
     provide: HTTP_INTERCEPTORS,
     useClass: LoadingScreenInterceptor,
     multi: true
-  },HeaderStringService, Globals],
+  }],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

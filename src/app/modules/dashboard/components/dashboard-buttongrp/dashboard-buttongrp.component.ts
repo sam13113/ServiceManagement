@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Globals } from 'src/app/common/constants/Globals';
 import {  RoutingEnumConstants } from 'src/app/common/constants/app-constants';
+import { FacadeService } from 'src/app/services/facade.service';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -11,13 +11,13 @@ import {  RoutingEnumConstants } from 'src/app/common/constants/app-constants';
 })
 export class DashboardButtongrpComponent implements OnInit {
 
-  constructor(private router: Router, private globals: Globals) { }
+  constructor(private router: Router, private facade: FacadeService) { }
 
   ngOnInit() {
   }
   showContractsPage() {
-    this.globals.setRoutingConstant(RoutingEnumConstants.CONTRACTS);
-    this.router.navigateByUrl(this.globals.getRoutingObject().url, { skipLocationChange: true });
+    this.facade.setRoutingConstant(RoutingEnumConstants.CONTRACTS);
+    this.router.navigateByUrl(this.facade.getRoutingObject().url, { skipLocationChange: true });
 
 }
 }

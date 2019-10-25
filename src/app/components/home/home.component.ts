@@ -1,8 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderStringService } from 'src/app/services/header-string.service';
-import { Globals } from 'src/app/common/constants/Globals';
 import {  RoutingEnumConstants } from 'src/app/common/constants/app-constants';
+import { FacadeService } from 'src/app/services/facade.service';
 
 
 @Component({
@@ -12,11 +11,11 @@ import {  RoutingEnumConstants } from 'src/app/common/constants/app-constants';
 export class HomeComponent implements AfterViewInit {
     ngAfterViewInit(): void {
     }
-    constructor(private router: Router, private header: HeaderStringService, private globals: Globals) { }
+    constructor(private router: Router, private facade: FacadeService) { }
     public showPortfolio(event: Event) {
         const id = (event.currentTarget as Element).id;
-        this.header.changeMessage('Service Level Management | Portfolio Management | ' + id);
-        this.globals.setRoutingConstant(RoutingEnumConstants.PORTFOLIO);
-        this.router.navigateByUrl(this.globals.getRoutingObject().url, { skipLocationChange: true });
+        this.facade.changeMessage('Service Level Management | Portfolio Management | ' + id);
+        this.facade.setRoutingConstant(RoutingEnumConstants.PORTFOLIO);
+        this.router.navigateByUrl(this.facade.getRoutingObject().url, { skipLocationChange: true });
     }
 }
