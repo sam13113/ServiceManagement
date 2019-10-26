@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../../../../services/data.service';
+import { DataService } from '../../../../services/data.service';
 import { Router } from '@angular/router';
 import { ISubProject } from 'src/app/services/models/ISubProject';
 import {  RoutingEnumConstants } from 'src/app/common/constants/app-constants';

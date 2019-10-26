@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContractsTableComponent } from './components/contracts-table/contracts-table.component';
 import { ContractUploadComponent } from './components/contract-upload/contract-upload.component';
+import { ContractsRoutingModule, contractsRoutingComponents} from './contracts-routing.module';
 
 
 
 @NgModule({
-  declarations: [ContractUploadComponent,  ContractsTableComponent],
+  declarations: [contractsRoutingComponents,  ContractsTableComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ContractsRoutingModule
   ]
-  , exports: [ContractUploadComponent]})
+  })
 export class ContractsModule { }

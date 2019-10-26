@@ -7,13 +7,14 @@ import { FacadeService } from 'src/app/services/facade.service';
 import { HeaderStringService } from '../services/header-string.service';
 import { LoadingScreenService } from '../services/loadingscreen/loading-screen.service';
 import { Globals } from './constants/Globals';
+import { LoadScreenComponent } from './load-screen/load-screen.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent,LoadScreenComponent],
   imports: [
   CommonModule
   ], providers: [FacadeService,HeaderStringService,LoadingScreenService,Globals],
-  exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent,LoadScreenComponent]
 })
 
 export class SharedModule { }

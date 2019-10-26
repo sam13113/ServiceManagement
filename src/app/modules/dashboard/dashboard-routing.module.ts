@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ProjectContentComponent } from './modules/dashboard-project/components/project-content/project-content.component';
-import { DatasourcingComponent } from './modules/service-record/components/datasourcing/datasourcing.component';
-import { ContractUploadComponent } from './modules/contracts/components/contract-upload/contract-upload.component';
 
 const routes: Routes = [
   {
@@ -12,15 +9,15 @@ const routes: Routes = [
     children: [
       {
         path: 'contracts',
-        component: ContractUploadComponent, data: {animation: 'ContractsPage'}
+        loadChildren: '../contracts/contracts.module#ContractsModule'
       },
       {
         path: 'service',
-        component: DatasourcingComponent, data: {animation: 'DatasourcingPage'}
+        loadChildren: '../service-record/service-record.module#ServiceRecordModule'
       },
       {
         path: '',
-        component: ProjectContentComponent, data: {animation: 'DashboardPage'}
+        loadChildren: '../dashboard-project/dashboard-project.module#DashboardProjectModule'
       }
     ], data: {animation: 'DashboardPage'}
   }

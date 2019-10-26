@@ -4,23 +4,19 @@ import { LinechartComponent } from './components/linechart/linechart.component';
 import { DoughnutchartComponent } from './components/doughnutchart/doughnutchart.component';
 import { ProjectTableComponent } from './components/project-table/project-table.component';
 import { ChartsModule } from 'ng2-charts';
-import { ProjectContentComponent } from './components/project-content/project-content.component';
+import { DashboardProjectRoutingModule, DashboardProjectRoutingComponents } from './dashboard-project-routing.module';
 
 
 
 @NgModule({
-  declarations: [ProjectContentComponent, ProjectTableComponent,
+  declarations: [DashboardProjectRoutingComponents, ProjectTableComponent,
     LinechartComponent,
     DoughnutchartComponent],
   imports: [
     CommonModule,
-    ChartsModule
-  ],
-  exports: [
-    ProjectContentComponent,
-    // ProjectTableComponent,
-    // LinechartComponent,
-    // DoughnutchartComponent
+    ChartsModule,
+    DashboardProjectRoutingModule
   ]
+
 })
 export class DashboardProjectModule { }
