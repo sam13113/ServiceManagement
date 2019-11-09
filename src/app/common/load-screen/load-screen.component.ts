@@ -10,12 +10,12 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class LoadScreenComponent implements AfterViewInit, OnDestroy  {
 
-   debounceTime: number = 200;
-  loading: boolean = false;
+   debounceTime = 200;
+  loading = false;
   loadingSubscription: Subscription;
 
   constructor(private loadingScreenService: LoadingScreenService, private _elmRef: ElementRef,
-    private _changeDetectorRef: ChangeDetectorRef) {}
+              private _changeDetectorRef: ChangeDetectorRef) {}
 
     ngAfterViewInit(): void {
       this._elmRef.nativeElement.style.display = 'none';

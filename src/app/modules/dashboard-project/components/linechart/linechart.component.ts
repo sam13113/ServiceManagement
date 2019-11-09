@@ -55,8 +55,6 @@ export class LinechartComponent  {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
   public chartHovered(event: Event) {
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from "rxjs";
+import { Subject } from 'rxjs';
 import { RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
 @Injectable({
@@ -7,10 +7,10 @@ import { RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, Navigati
 })
 export class LoadingScreenService {
 
-  private _loading: boolean = false;
+  private _loading = false;
   loadingStatus: Subject<boolean> = new Subject();
 
-  public get Loading():boolean {
+  public get Loading(): boolean {
     return this._loading;
   }
 
@@ -20,7 +20,7 @@ export class LoadingScreenService {
   }
 
  public startLoading() {
-    this.Loading=true;
+    this.Loading = true;
   }
 
   public stopLoading() {
@@ -28,18 +28,18 @@ export class LoadingScreenService {
   }
   public routernavigationEvent(event: RouterEvent): void {
     if (event instanceof NavigationStart) {
-      this.Loading = true
+      this.Loading = true;
     }
     if (event instanceof NavigationEnd) {
-      this.Loading = false
+      this.Loading = false;
     }
 
     // Set loading state to false in both of the below events to hide the spinner in case a request fails
     if (event instanceof NavigationCancel) {
-      this.Loading = false
+      this.Loading = false;
     }
     if (event instanceof NavigationError) {
-      this.Loading = false
+      this.Loading = false;
     }
   }
 }

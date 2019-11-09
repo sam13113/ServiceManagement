@@ -9,6 +9,37 @@ border-width: 0;
 box-shadow: none;
 background: none;
 overflow: visible;
-width: 500px;
+/* width: 500px; */
 align-self: right;
 }
+@media screen and ( max-width: 780px ) {
+  img.responsive { width:70px; height:27px; }
+  input.responsive-title{
+    font-size: 14px;
+    width: 350px;
+}
+.responsive-text{
+  font-size: 13px;
+}
+  }
+@media screen and ( max-width: 1024px )and ( min-width: 781px ) {
+  img.responsive { width:80px; height:30px; }
+  input.responsive-title{
+    font-size: 16px;
+    width: 450px;
+}
+.responsive-text{
+  font-size: 15px;
+}
+  }
+  @media screen and ( min-width: 1025px) {
+    img.responsive {width:100px; height:31px;}
+    input.responsive-title{
+      font-size: 18px;
+      width: 500px;
+  }
+  .responsive-text{
+    font-size: 17px;
+  }
+    }
+

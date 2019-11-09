@@ -1,22 +1,22 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest
-} from "@angular/common/http";
-import { Observable } from "rxjs";
-import { finalize } from "rxjs/operators";
+} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { FacadeService } from 'src/app/services/facade.service';
 
 @Injectable()
 export class LoadingScreenInterceptor implements HttpInterceptor {
-  activeRequests: number = 0;
+  activeRequests = 0;
 
   /**
    * URLs for which the loading screen should not be enabled
    */
-  skippUrls = ["/authrefresh"];
+  skippUrls = ['/authrefresh'];
 
   constructor(private facade: FacadeService) {}
 

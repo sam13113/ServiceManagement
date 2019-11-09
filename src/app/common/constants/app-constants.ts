@@ -27,7 +27,6 @@ export class RouteConfig {
     public static contractsPageUrl = 'portfolio/projects/dashboard/contracts';
 
 
-
  public static getRouteObject(
   routingEnum: RoutingEnumConstants
 ): IRouteObject {
@@ -45,3 +44,4 @@ export class RouteConfig {
   }
 }
 }
+export const  SERVER_API_URL = ''; // process.env.SERVER_API_URL;

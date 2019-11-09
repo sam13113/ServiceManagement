@@ -28,10 +28,10 @@ import { FacadeService } from './services/facade.service';
 })
 export class AppComponent {
   public static title = 'Service Level Management | Portfolio Management';
-  constructor(private router: Router, private facade:FacadeService) {
+  constructor(private router: Router, private facade: FacadeService) {
     router.events.subscribe((event: RouterEvent) => {
-      this.facade.loadingScreenService.routernavigationEvent(event)
-    })
+      this.facade.loadingScreenService.routernavigationEvent(event);
+    });
   }
   prepareRoute(outlet: RouterOutlet) {
     // outlet && outlet.activatedRouteData &&
