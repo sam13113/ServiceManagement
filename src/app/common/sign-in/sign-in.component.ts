@@ -23,7 +23,8 @@ export class SignInComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    // setTimeout(() => this.renderer.invokeElementMethod(this.elementRef.nativeElement.querySelector('#defaultForm-email'), 'focus', []), 0);
+    setTimeout(() => this.renderer.
+    selectRootElement('#username').focus(), 0);
   }
   cancel() {
     this.authenticationError = false;
